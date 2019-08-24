@@ -3,6 +3,7 @@ class Blob {
         this.acceleration = createVector(0, 0);
         this.velocity = createVector(0, -2);
         this.position = createVector(x, y);
+        this.player = false;
         this.r = 8;
         this.maxspeed = 5;
         this.maxforce = 0.5;
@@ -101,8 +102,11 @@ class Blob {
             }
 
         }
-        if (closestIndex != null) {
+        if (closestIndex != null && this.player == false) {
             return this.seek(closestIndex)
+        }else if(this.player == true){
+           var mouse = createVector(mouseX, mouseY);
+           return this.seek(mouse)
         }
         return createVector(0, 0)
     }
@@ -124,7 +128,7 @@ class Blob {
                 }
             }
         }
-        if (closest != null) {
+        if (closest != null && this.player == false) {
             return this.seek(closest)
         }
 

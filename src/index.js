@@ -25,6 +25,10 @@ function initDOM() {
     resetBtn.mousePressed(resetAll)
     resetBtn.class("button is-danger")
     resetBtn.parent(container)
+    newBtn = createButton("New Player")
+    newBtn.mousePressed(addPlayer)
+    newBtn.class("button is-primary")
+    newBtn.parent(container)
 
     mutationRate=new SliderDOM("Mutation Rate", 0,100,10,1,container)
     cloneTime = new SliderDOM("Reproduce Rate", 0,100,20,1,container)
@@ -67,6 +71,19 @@ function resetAll() {
     }
 }
 
+function addPlayer(){
+    var playerBlob = new Blob(width/2 , height/2);
+    
+    playerBlob.player = true;
+    playerBlob.r = 30;
+    playerBlob.health = 5;
+    playerBlob.color = color(0,0,0)
+    playerBlob.dna[0] = 3;
+ 
+    runners.push(playerBlob)
+}
+
+
 class MinMax{
     constructor(text, min, max,parent){
         this.text= createP(text),
@@ -104,7 +121,7 @@ function DivDOM(classVal, parent) {
         var temp = createDiv()
         temp.class(classVal)
         temp.parent(parent)
-        return temp;
+        return temp;  console.log(playerBlob)
 }
 
 function draw() {
@@ -119,7 +136,7 @@ function draw() {
         let Food = food[i]
         fill(0, 0, 255)
         noStroke()
-        ellipse(Food.x, Food.y, 5, 5)
+        ellipse(Food.x, Food.y, 6, 6)
     }
     for (let i = runners.length - 1; i >= 0; i--) {
         runners[i].edge();
