@@ -136,7 +136,7 @@ function draw() {
         let Food = food[i]
         fill(0, 0, 255)
         noStroke()
-        ellipse(Food.x, Food.y, 6, 6)
+        ellipse(Food.x, Food.y, 8, 8)
     }
     for (let i = runners.length - 1; i >= 0; i--) {
         runners[i].edge();

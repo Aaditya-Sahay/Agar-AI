@@ -91,7 +91,7 @@ class Blob {
         var record = Infinity;
         for (let i = list.length - 1; i >= 0; i--) {
             var d = this.position.dist(list[i])
-            if (d < this.maxspeed) {
+            if (d < this.r / 2 + this.maxspeed) {
                 list.splice(i, 1)
                 this.health += change;
                 var sum = PI * this.r * this.r + PI * change * 8 * 10;
