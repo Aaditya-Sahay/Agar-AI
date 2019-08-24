@@ -3,6 +3,6 @@
 
 ## Agar AI
 
-[!Agar AI](https://cdn.discordapp.com/attachments/598486320427302914/614716379760820225/Screenshot_from_2019-08-24_12-32-59.png)
+![Agar AI](https://cdn.discordapp.com/attachments/598486320427302914/614716379760820225/Screenshot_from_2019-08-24_12-32-59.png)
 
 A simple genetic evolution example that lets you customise settings and see a evolution happen as you change them. I will be adding the ability to play against the AI as player soon.
